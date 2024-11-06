@@ -1,0 +1,217 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+  
+.App {
+    width: 100%;
+    max-width: 600px; /* Increased max-width to accommodate all ratings */
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+  
+/* Headings */
+h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+  
+/* Responses Screen */
+.responses-screen {
+    padding: 20px;
+    text-align: left;
+    font-size: 1rem;
+}
+  
+.responses-screen ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.responses-screen li {
+    background-color: #f9fafb;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+  
+.responses-screen li strong {
+    color: #007bff; /* Highlight question ID with a different color */
+}
+
+/* Button Styles */
+button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: #007bff;
+    color: white;
+    margin: 10px; /* Spacing between buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+  
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+  
+button:active {
+    transform: translateY(1px);
+}
+  
+button:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+}
+  
+button.view-saved-responses {
+    background-color: #87CEEB; /* Sky blue for this specific button */
+}
+  
+button.view-saved-responses:hover {
+    background-color: #5bc0de; /* Lighter sky blue on hover */
+}
+  
+/* Layout for Buttons */
+.responses-screen .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Adds spacing between buttons */
+    margin-top: 20px;
+}
+
+/* Survey Screen (For consistency) */
+.survey-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+  
+.survey-screen h2 {
+    font-size: 1.4rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+  
+.survey-screen p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+  
+.survey-screen input[type="number"],
+.survey-screen textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+  
+.survey-screen input[type="number"]:focus,
+.survey-screen textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+  
+.survey-screen .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Ensures even spacing between buttons */
+    width: 100%;
+}
+  
+.survey-screen .button-group button {
+    flex: 1; /* Makes buttons expand to full width and evenly distribute */
+}
+
+/* Rating Buttons */
+.rating-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Display 5 buttons per row */
+    gap: 10px; /* Space between rating buttons */
+    margin-bottom: 2rem; /* Spacing below rating buttons */
+    justify-items: center; /* Center buttons horizontally */
+}
+
+.rating-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+  
+.rating-btn:hover {
+    transform: translateY(-2px);
+}
+  
+.rating-btn:active {
+    transform: translateY(1px);
+}
+  
+.rating-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Unique Colors for Ratings 1-10 */
+.rating-btn-1 { background-color: #ffadad; } /* Light Red for rating 1 */
+.rating-btn-2 { background-color: #ff9f9f; } /* Light Pink for rating 2 */
+.rating-btn-3 { background-color: #ffeb99; } /* Light Yellow for rating 3 */
+.rating-btn-4 { background-color: #99ff99; } /* Light Green for rating 4 */
+.rating-btn-5 { background-color: #99ccff; } /* Light Blue for rating 5 */
+.rating-btn-6 { background-color: #ffcc99; } /* Light Orange for rating 6 */
+.rating-btn-7 { background-color: #66cc66; } /* Medium Green for rating 7 */
+.rating-btn-8 { background-color: #6699ff; } /* Medium Blue for rating 8 */
+.rating-btn-9 { background-color: #ff6666; } /* Bright Red for rating 9 */
+.rating-btn-10 { background-color: #9966ff; } /* Purple for rating 10 */
+
+/* Selected Button */
+.rating-btn.selected {
+    opacity: 0.8; /* Slightly decrease opacity when selected for visual feedback */
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+    .App {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+    }
+
+    /* Rating Buttons Stack Properly on Mobile */
+    .rating-buttons {
+        grid-template-columns: repeat(5, 1fr); /* Still fit 5 buttons per row */
+        flex-wrap: wrap;
+    }
+
+    /* Make Rating Buttons Smaller on Mobile */
+    .rating-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
